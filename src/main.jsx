@@ -6,6 +6,7 @@ import './index.css'
 
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import Layout from './Layouts/Layout.jsx';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout/>,
     children: [
+      {
+        path: "",
+        element: <Navigate to="/dashboard" />, 
+      },
         {
           path:"/dashboard",
           element: <Dashboard/>
